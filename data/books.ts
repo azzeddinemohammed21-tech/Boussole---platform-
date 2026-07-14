@@ -11,7 +11,7 @@ export const books: Book[] = [
       "كتاب متكامل من اثني عشر فصلاً يقدّم منهجية عملية لاكتشاف الكفاءات وتطويرها وتوجيهها، مع أدوات تحليلية مبتكرة لمطابقة الفرص المهنية بالقدرات الفردية.",
     pages: 0,
     year: 2026,
-    downloadUrl: "/books/bousla-plus.pdf",
+    downloadUrl: "/books/Bousla_Plus_Book(1)(1).pdf",
     isNew: true,
   },
   {
