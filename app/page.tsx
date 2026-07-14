@@ -72,7 +72,7 @@ export default function Home() {
             </p>
             <div className="mt-8 flex gap-4">
               <Link
-                href="/signup"
+                href="/assessment"
                 className="rounded-full bg-brass px-7 py-3 font-semibold text-ink transition hover:bg-brass-light"
               >
                 ابدأ اختبار الكفاءات
