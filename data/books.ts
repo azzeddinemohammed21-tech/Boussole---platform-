@@ -19,7 +19,7 @@ export const books: Book[] = [
     title: "نبضة واحدة",
     subtitle: "نظرية التزامن البنيوي في الإدارة",
     author: "عز الدين محمد",
-    coverImage: "/books/nabda-cover.jpg",
+    coverImage:"/books/nabda-cover.png",
     description:
       "إطار تفسيري وتطبيقي في الإدارة الحديثة، يطرح مفهوم التزامن البنيوي كأداة لفهم وتحليل الأداء المؤسسي، مع ملاحق وحالات مضادة وأداة تشخيص ذاتي.",
     pages: 0,
