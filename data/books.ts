@@ -25,3 +25,5 @@ export const books: Book[] = [
     pages: 0,
     year: 2025,
     downloadUrl:"/books/التزامن_البنيوي-8(مع الغلاف)(1).pdf",
+},
+];
