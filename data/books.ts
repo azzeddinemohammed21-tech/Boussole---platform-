@@ -6,7 +6,7 @@ export const books: Book[] = [
     title: "بوصلة+",
     subtitle: "دليل عملي لإدارة الكفاءات البشرية",
     author: "عز الدين محمد",
-    coverImage: "/books/bousla-cover.jpg",
+    coverImage: "/books/5cf8518f-9f20-485c-ad07-74a56ae0addf.png",
     description:
       "كتاب متكامل من اثني عشر فصلاً يقدّم منهجية عملية لاكتشاف الكفاءات وتطويرها وتوجيهها، مع أدوات تحليلية مبتكرة لمطابقة الفرص المهنية بالقدرات الفردية.",
     pages: 0,
