@@ -28,7 +28,6 @@ export default function SignupPage() {
     }
     setDone(true);
   }
-
   return (
     <main className="flex min-h-screen items-center justify-center bg-sand px-6">
       <div className="w-full max-w-md rounded-2xl border border-ink/10 bg-white p-10 shadow-sm">
