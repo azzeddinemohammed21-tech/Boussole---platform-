@@ -23,7 +23,12 @@ export default function SignupPage() {
     });
     setLoading(false);
     if (error) {
-      setError("تعذّر إنشاء الحساب. تحقق من البيانات أو حاول لاحقًا.");
+  console.log("SIGNUP ERROR:", error.message, error);
+  setError(error.message);
+  return;
+}
+setDone(true);
+  }
       return;
     }
     setDone(true);
