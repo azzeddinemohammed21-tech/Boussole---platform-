@@ -36,6 +36,7 @@ export default function Home() {
             <a href="#pillars" className="hover:text-ink">المنصة</a>
             <a href="#academy" className="hover:text-ink">الأكاديمية</a>
             <a href="#companies" className="hover:text-ink">للشركات</a><Link href="/books" className="hover:text-brass">الكتب</Link>
+         <Link href="/books" className="hover:text-ink">الكتب</Link> 
           </nav>
           <div className="flex items-center gap-3">
             <Link
