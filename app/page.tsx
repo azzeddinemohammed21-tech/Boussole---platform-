@@ -32,7 +32,7 @@ export default function Home() {
           <span className="font-display text-xl font-extrabold tracking-tight">
             بوصلة<span className="text-brass">+</span>
           </span>
-          <nav className="hidden gap-8 text-sm text-ink/70 md:flex">
+          <nav className="flex flex-wrap gap-4 text-sm text-ink/70">
             <a href="#pillars" className="hover:text-ink">المنصة</a>
             <a href="#academy" className="hover:text-ink">الأكاديمية</a>
              <a href="#companies" className="hover:text-ink">الشركات</a>
