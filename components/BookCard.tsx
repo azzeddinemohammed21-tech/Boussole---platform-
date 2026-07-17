@@ -72,4 +72,4 @@ export default function BookCard({ book }: { book: Book }) {
       </div>
     </div>
   );
-}
+        }
