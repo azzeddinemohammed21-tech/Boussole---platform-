@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function AssessmentPage() {
   return (
-    <main className="min-h-screen bg-[#0a1220]">
+    <main className="min-h-screen bg-sand">
       <AssessmentQuiz />
     </main>
   );
