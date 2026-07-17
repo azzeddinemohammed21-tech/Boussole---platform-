@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { books } from "@/data/books";
 import BookCard from "@/components/BookCard";
 
@@ -8,12 +9,16 @@ export const metadata = {
 
 export default function BooksPage() {
   return (
-    <main className="min-h-screen bg-[#0a1220] px-6 py-16" dir="rtl">
+    <main className="min-h-screen bg-sand px-6 py-16" dir="rtl">
       <div className="mx-auto max-w-5xl text-right">
-        <h1 className="text-3xl font-bold text-white md:text-4xl">
+        <Link href="/" className="font-display text-lg font-extrabold text-ink">
+          بوصلة<span className="text-brass">+</span>
+        </Link>
+
+        <h1 className="mt-8 font-display text-3xl font-bold text-ink md:text-4xl">
           مكتبة بوصلة+
         </h1>
-        <p className="mt-3 max-w-2xl text-gray-400">
+        <p className="mt-3 max-w-2xl text-ink/70">
           إصداراتنا في إدارة الكفاءات البشرية والتطوير المؤسسي — متاحة
           للتحميل والاطلاع.
         </p>
