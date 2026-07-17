@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { questions, categories, likertOptions } from "@/data/assessment-questions";
 import { strengthAdvice, growthAdvice } from "@/data/assessment-advice";
 import { CategoryId, CategoryResult } from "@/types/assessment";
@@ -66,8 +67,14 @@ export default function AssessmentQuiz() {
 
     return (
       <div className="mx-auto max-w-2xl px-6 py-16 text-right" dir="rtl">
-        <h1 className="text-3xl font-bold text-white">تقرير اكتشاف الكفاءات</h1>
-        <p className="mt-2 text-sm text-gray-400">
+        <Link href="/" className="font-display text-lg font-extrabold text-ink">
+          بوصلة<span className="text-brass">+</span>
+        </Link>
+
+        <h1 className="mt-8 font-display text-3xl font-bold text-ink">
+          تقرير اكتشاف الكفاءات
+        </h1>
+        <p className="mt-2 text-sm text-ink/60">
           هذا التقرير أداة توجيه ذاتي مبنية على إجاباتك، وليس تشخيصًا علميًا
           دقيقًا. استخدمه كنقطة انطلاق للتفكير، لا كحكم نهائي على قدراتك.
         </p>
@@ -76,12 +83,12 @@ export default function AssessmentQuiz() {
           {sorted.map((r) => (
             <div key={r.categoryId}>
               <div className="mb-1 flex items-center justify-between text-sm">
-                <span className="text-white">{nameOf(r.categoryId)}</span>
-                <span className="text-[#b08d57]">{r.percentage}%</span>
+                <span className="text-ink">{nameOf(r.categoryId)}</span>
+                <span className="text-brass-dark">{r.percentage}%</span>
               </div>
-              <div className="h-3 w-full overflow-hidden rounded-full bg-[#1a2744]">
+              <div className="h-3 w-full overflow-hidden rounded-full bg-ink/10">
                 <div
-                  className="h-full rounded-full bg-[#b08d57]"
+                  className="h-full rounded-full bg-brass"
                   style={{ width: `${r.percentage}%` }}
                 />
               </div>
@@ -89,23 +96,23 @@ export default function AssessmentQuiz() {
           ))}
         </div>
 
-        <div className="mt-12 rounded-xl border border-[#1a2744] bg-[#0f1a2e] p-6">
-          <h2 className="text-xl font-bold text-white">أبرز نقاط قوتك</h2>
+        <div className="mt-12 rounded-2xl border border-ink/10 bg-white/60 p-6">
+          <h2 className="font-display text-xl font-bold text-ink">أبرز نقاط قوتك</h2>
           {strengths.map((s) => (
             <div key={s.categoryId} className="mt-4">
-              <h3 className="font-semibold text-[#b08d57]">{nameOf(s.categoryId)}</h3>
-              <p className="mt-1 text-sm leading-relaxed text-gray-300">
+              <h3 className="font-semibold text-brass-dark">{nameOf(s.categoryId)}</h3>
+              <p className="mt-1 text-sm leading-relaxed text-ink/70">
                 {strengthAdvice[s.categoryId]}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="mt-6 rounded-xl border border-[#1a2744] bg-[#0f1a2e] p-6">
-          <h2 className="text-xl font-bold text-white">مجال للتطوير</h2>
+        <div className="mt-6 rounded-2xl border border-ink/10 bg-white/60 p-6">
+          <h2 className="font-display text-xl font-bold text-ink">مجال للتطوير</h2>
           <div className="mt-4">
-            <h3 className="font-semibold text-[#b08d57]">{nameOf(growthArea.categoryId)}</h3>
-            <p className="mt-1 text-sm leading-relaxed text-gray-300">
+            <h3 className="font-semibold text-brass-dark">{nameOf(growthArea.categoryId)}</h3>
+            <p className="mt-1 text-sm leading-relaxed text-ink/70">
               {growthAdvice[growthArea.categoryId]}
             </p>
           </div>
@@ -113,7 +120,7 @@ export default function AssessmentQuiz() {
 
         <button
           onClick={restart}
-          className="mt-10 rounded-lg border border-[#b08d57] px-6 py-3 text-sm font-semibold text-[#b08d57] transition-colors hover:bg-[#b08d57] hover:text-[#0f1a2e]"
+          className="mt-10 rounded-full border border-brass px-6 py-3 text-sm font-semibold text-brass-dark transition hover:bg-brass hover:text-ink"
         >
           إعادة الاختبار
         </button>
@@ -123,20 +130,24 @@ export default function AssessmentQuiz() {
 
   return (
     <div className="mx-auto max-w-2xl px-6 py-16 text-right" dir="rtl">
-      <div className="mb-8">
-        <div className="mb-2 flex justify-between text-xs text-gray-400">
+      <Link href="/" className="font-display text-lg font-extrabold text-ink">
+        بوصلة<span className="text-brass">+</span>
+      </Link>
+
+      <div className="mt-8 mb-8">
+        <div className="mb-2 flex justify-between text-xs text-ink/60">
           <span>السؤال {step + 1} من {questions.length}</span>
           <span>{progress}%</span>
         </div>
-        <div className="h-2 w-full overflow-hidden rounded-full bg-[#1a2744]">
+        <div className="h-2 w-full overflow-hidden rounded-full bg-ink/10">
           <div
-            className="h-full rounded-full bg-[#b08d57] transition-all"
+            className="h-full rounded-full bg-brass transition-all"
             style={{ width: `${progress}%` }}
           />
         </div>
       </div>
 
-      <h2 className="text-xl font-semibold text-white leading-relaxed">
+      <h2 className="font-display text-xl font-semibold text-ink leading-relaxed">
         {current.text}
       </h2>
 
@@ -147,10 +158,10 @@ export default function AssessmentQuiz() {
             <button
               key={opt.value}
               onClick={() => selectAnswer(opt.value)}
-              className={`w-full rounded-lg border px-5 py-3 text-right text-sm transition-colors ${
+              className={`w-full rounded-full border px-5 py-3 text-right text-sm transition-colors ${
                 selected
-                  ? "border-[#b08d57] bg-[#b08d57]/10 text-white"
-                  : "border-[#1a2744] text-gray-300 hover:border-[#b08d57]/50"
+                  ? "border-brass bg-brass/10 text-ink"
+                  : "border-ink/15 text-ink/70 hover:border-brass/50"
               }`}
             >
               {opt.label}
@@ -163,18 +174,18 @@ export default function AssessmentQuiz() {
         <button
           onClick={goPrev}
           disabled={step === 0}
-          className="rounded-lg px-5 py-2 text-sm text-gray-400 disabled:opacity-30"
+          className="rounded-full px-5 py-2 text-sm text-ink/60 disabled:opacity-30"
         >
           السابق
         </button>
         <button
           onClick={goNext}
           disabled={!isAnswered}
-          className="rounded-lg bg-[#b08d57] px-6 py-2 text-sm font-semibold text-[#0f1a2e] disabled:opacity-30"
+          className="rounded-full bg-indigo px-6 py-2 text-sm font-semibold text-sand transition hover:bg-indigo-light disabled:opacity-30"
         >
           {step === questions.length - 1 ? "عرض النتيجة" : "التالي"}
         </button>
       </div>
     </div>
   );
-}
+                              }
