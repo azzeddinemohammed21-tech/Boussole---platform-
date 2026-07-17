@@ -53,23 +53,4 @@ export default function BookCard({ book }: { book: Book }) {
       </div>
     </div>
   );
-}              className="flex-1 rounded-lg bg-[#b08d57] px-4 py-2 text-center text-sm font-semibold text-[#0f1a2e] transition-colors hover:bg-[#c9a56d]"
-            >
-              تحميل PDF
-            </a>
-          )}
-          {book.purchaseUrl && (
-            <a
-              href={book.purchaseUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 rounded-lg border border-[#b08d57] px-4 py-2 text-center text-sm font-semibold text-[#b08d57] transition-colors hover:bg-[#b08d57] hover:text-[#0f1a2e]"
-            >
-              اقتناء الكتاب
-            </a>
-          )}
-        </div>
-      </div>
-    </div>
-  );
-        }
+      }
