@@ -180,3 +180,48 @@ export default function AssessmentQuiz() {
           <div
             className="h-full rounded-full bg-brass transition-all"
             style={{ width: `${progress}%` }}
+/>   </div>
+      </div>
+
+      <h2 className="font-display text-xl font-semibold text-ink leading-relaxed">
+        {current.text}
+      </h2>
+
+      <div className="mt-8 space-y-3">
+        {likertOptions.map((opt) => {
+          const selected = answers[current.id] === opt.value;
+          return (
+            <button
+              key={opt.value}
+              onClick={() => selectAnswer(opt.value)}
+              className={`w-full rounded-full border px-5 py-3 text-right text-sm transition-colors ${
+                selected
+                  ? "border-brass bg-brass/10 text-ink"
+                  : "border-ink/15 text-ink/70 hover:border-brass/50"
+              }`}
+            >
+              {opt.label}
+            </button>
+          );
+        })}
+      </div>
+
+      <div className="mt-10 flex justify-between">
+        <button
+          onClick={goPrev}
+          disabled={step === 0}
+          className="rounded-full px-5 py-2 text-sm text-ink/60 disabled:opacity-30"
+        >
+          السابق
+        </button>
+        <button
+          onClick={goNext}
+          disabled={!isAnswered}
+          className="rounded-full bg-indigo px-6 py-2 text-sm font-semibold text-sand transition hover:bg-indigo-light disabled:opacity-30"
+        >
+          {step === questions.length - 1 ? "عرض النتيجة" : "التالي"}
+        </button>
+      </div>
+    </div>
+  );
+}
