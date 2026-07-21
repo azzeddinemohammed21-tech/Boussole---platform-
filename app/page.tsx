@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import Button from "@/components/ui/Button";
 const pillars = [
   {
     title: "اختبارات اكتشاف الكفاءات",
@@ -44,11 +44,9 @@ export default function Home() {
               className="text-sm font-medium text-ink/80 hover:text-ink"
             >
               تسجيل الدخول
-            </Link>
-            <Link
-              href="/signup"
-              className="rounded-full bg-indigo px-5 py-2 text-sm font-semibold text-sand transition hover:bg-indigo-light"
-            >
+            <Link href="/signup">
+  <Button>ابدأ الآن</Button>
+</Link>
               ابدأ الآن
             </Link>
           </div>
