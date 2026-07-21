@@ -180,7 +180,8 @@ export default function AssessmentQuiz() {
           <div
             className="h-full rounded-full bg-brass transition-all"
             style={{ width: `${progress}%` }}
-/>   </div>
+/>  
+        </div>
       </div>
 
       <h2 className="font-display text-xl font-semibold text-ink leading-relaxed">
