@@ -5,6 +5,7 @@ import Link from "next/link";
 import { questions, categories, likertOptions } from "@/data/assessment-questions";
 import { strengthAdvice, growthAdvice } from "@/data/assessment-advice";
 import { matchingProfiles } from "@/data/matching-recommendations";
+import { academyResources } from "@/data/academy-resources";
 import { CategoryId, CategoryResult } from "@/types/assessment";
 
 type Answers = Record<string, number>;
@@ -155,6 +156,26 @@ export default function AssessmentQuiz() {
           })}
         </div>
 
+        <div className="mt-6 rounded-2xl border border-ink/10 bg-white/60 p-6">
+          <h2 className="font-display text-xl font-bold text-ink">دورات مقترحة لك</h2>
+          <p className="mt-1 text-sm text-ink/60">
+            روابط بحث حية بمنصات تعليمية موثوقة، لتطوير محور "{nameOf(growthArea.categoryId)}" تحديدًا.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-3">
+            {academyResources[growthArea.categoryId].map((res) => (
+              <a
+                key={res.url}
+                href={res.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-brass px-4 py-2 text-xs font-semibold text-brass-dark transition hover:bg-brass hover:text-ink"
+              >
+                {res.platform} — {res.label}
+              </a>
+            ))}
+          </div>
+        </div>
+
         <button
           onClick={restart}
           className="mt-10 rounded-full border border-brass px-6 py-3 text-sm font-semibold text-brass-dark transition hover:bg-brass hover:text-ink"
@@ -180,7 +201,7 @@ export default function AssessmentQuiz() {
           <div
             className="h-full rounded-full bg-brass transition-all"
             style={{ width: `${progress}%` }}
-/>  
+          />
         </div>
       </div>
 
@@ -225,4 +246,4 @@ export default function AssessmentQuiz() {
       </div>
     </div>
   );
-}
+                                                   }
