@@ -17,7 +17,7 @@ const pillars = [
     title: "أكاديمية بوصلة+",
     desc: "دورات وشهادات مبنية على فجوات الكفاءة المكتشفة فعليًا، لا عناوين عامة.",
     mark: "٣",
-    href: "#academy",
+    href: "/academy",
   },
   {
     title: "الشركات والفرص",
@@ -136,6 +136,12 @@ export default function Home() {
             دورات وشهادات مبنية على نتائج اختبار الكفاءات الخاص بك، وليست
             قائمة عامة يختارها الجميع.
           </p>
+          <Link
+            href="/academy"
+            className="mt-6 inline-block rounded-full bg-brass px-7 py-3 font-semibold text-ink transition hover:bg-brass-light"
+          >
+            تصفّح الأكاديمية
+          </Link>
         </div>
       </section>
 
@@ -163,4 +169,4 @@ export default function Home() {
       </footer>
     </main>
   );
-      }
+}
