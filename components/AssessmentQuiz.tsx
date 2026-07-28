@@ -226,3 +226,74 @@ export default function AssessmentQuiz() {
             ))}
           </div>
         </div>
+<button
+          onClick={restart}
+          className="mt-10 rounded-full border border-brass px-6 py-3 text-sm font-semibold text-brass-dark transition hover:bg-brass hover:text-ink"
+        >
+          إعادة الاختبار
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <div className="mx-auto max-w-2xl px-6 py-16 text-right" dir="rtl">
+      <Link href="/" className="font-display text-lg font-extrabold text-ink">
+        بوصلة<span className="text-brass">+</span>
+      </Link>
+
+      <div className="mt-8 mb-8">
+        <div className="mb-2 flex justify-between text-xs text-ink/60">
+          <span>السؤال {step + 1} من {questions.length}</span>
+          <span>{progress}%</span>
+        </div>
+        <div className="h-2 w-full overflow-hidden rounded-full bg-ink/10">
+          <div
+            className="h-full rounded-full bg-brass transition-all"
+            style={{ width: `${progress}%` }}
+          />
+        </div>
+      </div>
+
+      <h2 className="font-display text-xl font-semibold text-ink leading-relaxed">
+        {current.text}
+      </h2>
+
+      <div className="mt-8 space-y-3">
+        {likertOptions.map((opt) => {
+          const selected = answers[current.id] === opt.value;
+          return (
+            <button
+              key={opt.value}
+              onClick={() => selectAnswer(opt.value)}
+              className={`w-full rounded-full border px-5 py-3 text-right text-sm transition-colors ${
+                selected
+                  ? "border-brass bg-brass/10 text-ink"
+                  : "border-ink/15 text-ink/70 hover:border-brass/50"
+              }`}
+            >
+              {opt.label}
+            </button>
+          );
+        })}
+      </div>
+
+      <div className="mt-10 flex justify-between">
+        <button
+          onClick={goPrev}
+          disabled={step === 0}
+          className="rounded-full px-5 py-2 text-sm text-ink/60 disabled:opacity-30"
+        >
+          السابق
+        </button>
+        <button
+          onClick={goNext}
+          disabled={!isAnswered}
+          className="rounded-full bg-indigo px-6 py-2 text-sm font-semibold text-sand transition hover:bg-indigo-light disabled:opacity-30"
+        >
+          {step === questions.length - 1 ? "عرض النتيجة" : "التالي"}
+        </button>
+      </div>
+    </div>
+  );
+}
