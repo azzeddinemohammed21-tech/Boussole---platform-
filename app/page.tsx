@@ -23,7 +23,7 @@ const pillars = [
     title: "الشركات والفرص",
     desc: "مساحة للمؤسسات للوصول إلى كفاءات موثّقة بدل السير الذاتية وحدها.",
     mark: "٤",
-    href: "#companies",
+    href: "/companies",
   },
 ];
 
@@ -156,10 +156,10 @@ export default function Home() {
             اختبارات حقيقية، لا سير ذاتية مجردة.
           </p>
           <Link
-            href="/signup"
+            href="/companies"
             className="mt-6 inline-block rounded-full bg-indigo px-7 py-3 font-semibold text-sand transition hover:bg-indigo-light"
           >
-            انضم كشركة
+            تواصل معنا
           </Link>
         </div>
       </section>
