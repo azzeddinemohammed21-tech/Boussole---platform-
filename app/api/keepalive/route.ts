@@ -1,3 +1,4 @@
+import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 
 export const dynamic = "force-dynamic";
@@ -11,5 +12,5 @@ export async function GET() {
     .from("assessment_results")
     .select("user_id")
     .limit(1);
-  return Response.json({ ok: !error, at: new Date().toISOString() });
-    }
+  return NextResponse.json({ ok: !error, at: new Date().toISOString() });
+}
